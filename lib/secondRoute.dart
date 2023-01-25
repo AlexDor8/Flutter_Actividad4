@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/thirdRoute.dart';
 
 import 'fisrtRoute.dart';
+import 'model/pais.dart';
 
 // ignore: camel_case_types
 class secondRoute extends StatefulWidget {
@@ -12,19 +14,20 @@ class secondRoute extends StatefulWidget {
 
 // ignore: camel_case_types
 class _secondRouteState extends State<secondRoute> {
-  int contador = 0;
+  late List<Pais> paises = [
+    Pais(
+        'https://www.maravillas-del-mundo.com/Cristo-redentor/images/Photos/Christ-redempteur-006.jpg',
+        'Brasil',
+        'Rio de Janeiro'),
+    Pais('https://cdn.culturagenial.com/es/imagenes/la-muralla-china-og.jpg',
+        'China', 'La gran muralla China'),
+    Pais(
+        'https://viajes.nationalgeographic.com.es/medio/2018/03/01/machu-picchu_5ff969ae_1280x720.jpg',
+        'Perú',
+        'El Machu Picchu'),
+  ];
 
-  void incrementarContador() {
-    setState(() {
-      contador++;
-    });
-  }
-
-  void decrementarContador() {
-    setState(() {
-      contador--;
-    });
-  }
+  late int posicion;
 
   @override
   Widget build(BuildContext context) {
@@ -33,44 +36,37 @@ class _secondRouteState extends State<secondRoute> {
         title: const Text('Segunda pantalla'),
       ),
       body: Center(
-          child: SizedBox(
-              child: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-            child: Text(
-              "Bienvenido $email !",
-              style: const TextStyle(color: Colors.black, fontSize: 25),
-            ),
-          ),
-          Container(
-            margin: const EdgeInsets.fromLTRB(90, 0, 90, 0),
-            child: Image.network(
-              'https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Clipart.png',
-              fit: BoxFit.contain,
-            ),
-          ),
-          Text("$contador", style: const TextStyle(fontSize: 50)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              FloatingActionButton(
-                heroTag: "incrementar",
-                  onPressed: incrementarContador, child: const Icon(Icons.add)),
-              FloatingActionButton(
-                heroTag: "decrementar",
-                  onPressed: decrementarContador,
-                  child: const Icon(Icons.remove)),
-            ],
-          ),
-          ElevatedButton(
-              child: const Text('Volver'),
-              onPressed: () {
-                Navigator.pop(context);
-              }),
-          
-        ],
-      ))),
+          child: InkWell(
+        child: ListView.builder(
+            itemCount: paises.length,
+            itemBuilder: ((context, index) {
+              return GestureDetector(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      Image.network(
+                        paises[index].urlImagen,
+                        width: 150,
+                      ),
+                      const SizedBox(width: 20),
+                      Column(
+                        children: [
+                          Text(paises[index].pais),
+                          Text(paises[index].ciudad)
+                        ],
+                      )
+                    ],
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => thirdRoute(
+                          title: "Tercera pantalla",
+                          foto: paises[index].urlImagen),
+                    ));
+                  });
+            })),
+      )),
     );
   }
 }

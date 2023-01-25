@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class thirdRoute extends StatefulWidget {
-  const thirdRoute({super.key, required this.title, required this.foto});
+  const thirdRoute(
+      {super.key,
+      required this.title,
+      required this.foto,
+      required this.descripcion});
 
   final String title;
   final String foto;
+  final String descripcion;
 
   @override
   State<thirdRoute> createState() => _thirdRouteState();
@@ -20,32 +25,26 @@ class _thirdRouteState extends State<thirdRoute> {
         title: Text(widget.title),
       ),
       body: Center(
-          child: SizedBox(
-              height: 100,
-              child: Column(
+          child: Column(
+        children: [
+          Image.network(
+            widget.foto,
+            fit: BoxFit.contain,
+          ),
+          Container(
+              margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Row(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.network(
-                        widget.foto,
-                        width: 150,
-                      ),
-                      Column(
-                        children: const <Widget>[
-                          Text('Old Boy'),
-                          Text(
-                            "Park Chan-Wook",
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                      const Icon(Icons.star),
-                      const Text('4.5'),
-                    ],
-                  ),
+                  Flexible(
+                    child: Text(
+                      widget.descripcion,
+                      textAlign: TextAlign.justify,
+                    ),
+                  )
                 ],
-              ))),
+              ))
+        ],
+      )),
     );
   }
 }

@@ -74,7 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
                         email = value!;
                         if (value.isEmpty) {
                           return "Introduce texto";
-                        } if (value != "user") {
+                        }
+                        if (value != "user") {
                           return "El usuario no es correcto";
                         }
                         return null;

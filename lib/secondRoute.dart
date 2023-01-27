@@ -50,10 +50,13 @@ class _secondRouteState extends State<secondRoute> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      Hero(tag: paises[index].pais, child: Image.network(
-                        paises[index].urlImagen,
-                        width: 150,
-                      ),),
+                      Hero(
+                        tag: paises[index].pais,
+                        child: Image.network(
+                          paises[index].urlImagen,
+                          width: 150,
+                        ),
+                      ),
                       const SizedBox(width: 20),
                       Column(
                         children: [
@@ -66,10 +69,11 @@ class _secondRouteState extends State<secondRoute> {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => thirdRoute(
-                          title: "Tercera pantalla",
-                          foto: paises[index].urlImagen,
-                          descripcion: paises[index].descripcion,
-                          pais: paises[index].pais,),
+                        title: "Tercera pantalla",
+                        foto: paises[index].urlImagen,
+                        descripcion: paises[index].descripcion,
+                        pais: paises[index].pais,
+                      ),
                     ));
                   });
             })),

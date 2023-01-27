@@ -29,10 +29,13 @@ class _thirdRouteState extends State<thirdRoute> {
       body: Center(
           child: Column(
         children: [
-          Hero(tag: widget.pais, child: Image.network(
-            widget.foto,
-            fit: BoxFit.contain,
-          ),),
+          Hero(
+            tag: widget.pais,
+            child: Image.network(
+              widget.foto,
+              fit: BoxFit.contain,
+            ),
+          ),
           Container(
               margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
               child: Row(

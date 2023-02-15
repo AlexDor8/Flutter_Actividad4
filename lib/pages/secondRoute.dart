@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/thirdRoute.dart';
+import 'package:flutter_application_3/pages/thirdRoute.dart';
 
-import 'fisrtRoute.dart';
-import 'model/pais.dart';
+import '../model/pais.dart';
+import '../routing/routes.dart';
 
 // ignore: camel_case_types
 class secondRoute extends StatefulWidget {
-  const secondRoute({super.key, @required email});
+  const secondRoute({super.key, required this.email});
+
+  final String email;
 
   @override
   State<secondRoute> createState() => _secondRouteState();
@@ -41,43 +43,43 @@ class _secondRouteState extends State<secondRoute> {
         title: const Text('Segunda pantalla'),
       ),
       body: Center(
-          child: InkWell(
-        child: ListView.builder(
-            itemCount: paises.length,
-            itemBuilder: ((context, index) {
-              return GestureDetector(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [
-                      Hero(
-                        tag: paises[index].pais,
-                        child: Image.network(
-                          paises[index].urlImagen,
-                          width: 150,
+        child: Column(
+          children: [
+            Text("Nombre de usuario: ${widget.email}"),
+            Flexible(
+                child: InkWell(
+              child: ListView.builder(
+                  itemCount: paises.length,
+                  itemBuilder: ((context, index) {
+                    return GestureDetector(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            Hero(
+                              tag: paises[index].pais,
+                              child: Image.network(
+                                paises[index].urlImagen,
+                                width: 150,
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            Column(
+                              children: [
+                                Text(paises[index].pais),
+                                Text(paises[index].ciudad)
+                              ],
+                            )
+                          ],
                         ),
-                      ),
-                      const SizedBox(width: 20),
-                      Column(
-                        children: [
-                          Text(paises[index].pais),
-                          Text(paises[index].ciudad)
-                        ],
-                      )
-                    ],
-                  ),
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => thirdRoute(
-                        title: "Tercera pantalla",
-                        foto: paises[index].urlImagen,
-                        descripcion: paises[index].descripcion,
-                        pais: paises[index].pais,
-                      ),
-                    ));
-                  });
-            })),
-      )),
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.thirdRoute, arguments: paises[index]);
+                        });
+                  })),
+            )),
+          ],
+        ),
+      ),
     );
   }
 }

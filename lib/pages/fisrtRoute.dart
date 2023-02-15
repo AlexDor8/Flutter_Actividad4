@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/routing/app_routes.dart';
+import 'package:flutter_application_3/routing/routes.dart';
 
 import 'secondRoute.dart';
 
@@ -15,15 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/",
-      routes: {
-        '/': (context) => const MyHomePage(
-              title: 'Login Page',
-            ),
-        '/second': (context) => const secondRoute(
-              email: null,
-            ),
-      },
+      initialRoute: Routes.splash,
+      routes: appRoutes,
     );
   }
 }
@@ -119,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const Text('Login'),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, '/second');
+                        Navigator.pushNamed(context, Routes.secondRoute, arguments: email);
                       }
                     }),
                 Container(

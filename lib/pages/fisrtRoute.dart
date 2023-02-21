@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_3/routing/app_routes.dart';
 import 'package:flutter_application_3/routing/routes.dart';
 
+import '../globals.dart';
 import 'secondRoute.dart';
 
 String password = "";
-String email = "";
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const Text('Login'),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushNamed(context, Routes.secondRoute, arguments: email);
+                        Navigator.pushReplacementNamed(context, Routes.secondRoute, arguments: email);
                       }
                     }),
                 Container(

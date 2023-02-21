@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
                   width: 200, height: 200, child: CircularProgressIndicator()),
             ),
             Center(
-              child: Image.asset('assets/images/logo_viajes.png'),
+              child: Image.network('https://www.zarla.com/images/zarla-escpate-1x1-2400x2400-20210603-h6qr8xphp7xfp9vt4pwc.png?crop=1:1,smart&width=250&dpr=2', width: 80, height: 80,),
             )
           ]),
         )

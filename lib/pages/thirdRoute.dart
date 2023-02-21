@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/pages/secondRoute.dart';
+
+import '../globals.dart';
+import '../model/pais.dart';
+import '../routing/routes.dart';
 
 // ignore: camel_case_types
 class thirdRoute extends StatefulWidget {
-  const thirdRoute(
-      {super.key,
-      required this.title,
-      required this.foto,
-      required this.descripcion,
-      required this.pais});
+  const thirdRoute({super.key, required this.title, required this.pais});
 
   final String title;
-  final String foto;
-  final String pais;
-  final String descripcion;
+  final Pais pais;
 
   @override
   State<thirdRoute> createState() => _thirdRouteState();
@@ -32,7 +30,7 @@ class _thirdRouteState extends State<thirdRoute> {
           Hero(
             tag: widget.pais,
             child: Image.network(
-              widget.foto,
+              widget.pais.urlImagen,
               fit: BoxFit.contain,
             ),
           ),
@@ -42,12 +40,19 @@ class _thirdRouteState extends State<thirdRoute> {
                 children: [
                   Flexible(
                     child: Text(
-                      widget.descripcion,
+                      widget.pais.descripcion,
                       textAlign: TextAlign.justify,
                     ),
                   )
                 ],
-              ))
+              )),
+          ElevatedButton(
+              child: const Text('Borrar'),
+              onPressed: () {
+                paises.remove(widget.pais);
+                Navigator.pushReplacementNamed(context, Routes.secondRoute,
+                    arguments: email);
+              }),
         ],
       )),
     );

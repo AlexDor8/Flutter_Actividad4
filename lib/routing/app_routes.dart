@@ -17,7 +17,7 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     },
     Routes.thirdRoute:(context) {
       final pais = ModalRoute.of(context)!.settings.arguments as Pais;
-      return thirdRoute(title: "Tercera pantalla", foto: pais.urlImagen, descripcion: pais.descripcion, pais: pais.pais);
+      return thirdRoute(title: "Tercera pantalla", pais: pais);
     }
   };
 }

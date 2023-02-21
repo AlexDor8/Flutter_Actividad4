@@ -17,6 +17,7 @@ class _SplashPageState extends State<SplashPage> {
         (value) => Navigator.pushReplacementNamed(context, Routes.fisrtRoute));
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(children: [

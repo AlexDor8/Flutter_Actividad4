@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/fisrtRoute.dart';
+import 'pages/login.dart';
 
 void main() {
   runApp(const MyApp());

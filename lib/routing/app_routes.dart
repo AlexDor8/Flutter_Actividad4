@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/model/pais.dart';
-import 'package:flutter_application_3/pages/fisrtRoute.dart';
-import 'package:flutter_application_3/pages/secondRoute.dart';
-import 'package:flutter_application_3/pages/splashPage.dart';
-import 'package:flutter_application_3/pages/thirdRoute.dart';
+import 'package:flutter_application_3/pages/login.dart';
+import 'package:flutter_application_3/pages/countryList.dart';
+import 'package:flutter_application_3/pages/splash.dart';
+import 'package:flutter_application_3/pages/detailList.dart';
 import 'package:flutter_application_3/routing/routes.dart';
 
 Map<String, Widget Function(BuildContext)> get appRoutes {

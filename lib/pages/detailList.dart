@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_3/pages/secondRoute.dart';
+import 'package:flutter_application_3/pages/countryList.dart';
 
 import '../globals.dart';
 import '../model/pais.dart';
@@ -48,11 +48,27 @@ class _thirdRouteState extends State<thirdRoute> {
               )),
           ElevatedButton(
               child: const Text('Borrar'),
-              onPressed: () {
-                paises.remove(widget.pais);
-                Navigator.pushReplacementNamed(context, Routes.secondRoute,
-                    arguments: email);
-              }),
+              onPressed: () => showDialog(
+                  context: context,
+                  builder: (BuildContext context) => AlertDialog(
+                        title: const Text("Eliminar país"),
+                        content: const Text("¿Quieres eliminar este país?"),
+                        actions: [
+                          TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(context, 'Cancelar'),
+                              child: const Text('Cancelar')),
+                          TextButton(
+                              onPressed: (() {
+                                paises.remove(widget.pais);
+                                Navigator.pop(context, 'Eliminar');
+                                Navigator.pushReplacementNamed(
+                                    context, Routes.secondRoute,
+                                    arguments: email);
+                              }),
+                              child: const Text('Eliminar'))
+                        ],
+                      ))),
         ],
       )),
     );

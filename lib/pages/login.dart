@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const Text('Login'),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        Navigator.pushReplacementNamed(context, Routes.secondRoute, arguments: email);
+                        Navigator.pushReplacementNamed(context, Routes.home,);
                       }
                     }),
                 Container(

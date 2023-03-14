@@ -52,10 +52,10 @@ class _shoppingListSate extends State<shoppingList> {
                         )
                       ],
                     ),
-                    /*onTap: () {
-                      Navigator.pushNamed(context, Routes.thirdRoute,
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.catalogoDetalle,
                           arguments: billetes[index]);
-                    }*/
+                    }
                   );
                 })),
           ),

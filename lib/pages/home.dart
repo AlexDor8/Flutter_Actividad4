@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/globals.dart';
 
@@ -11,6 +10,7 @@ class Home extends StatefulWidget {
   State<StatefulWidget> createState() => _home();
 }
 
+// ignore: camel_case_types
 class _home extends State<Home> {
   @override
   Widget build(BuildContext context) {

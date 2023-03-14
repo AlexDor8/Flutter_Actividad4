@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/globals.dart';
 
-import '../globals.dart';
-import '../model/pais.dart';
+import '../model/billete.dart';
 import '../routing/routes.dart';
 
-// ignore: camel_case_types
-class thirdRoute extends StatefulWidget {
-  const thirdRoute({super.key, required this.title, required this.pais});
+class ShoppingDetailList extends StatefulWidget {
+  const ShoppingDetailList({super.key, required this.title, required this.billete});
 
   final String title;
-  final Pais pais;
+  final Billete billete;
 
   @override
-  State<thirdRoute> createState() => _thirdRouteState();
+  State<ShoppingDetailList> createState() => _shoppingDetailList();
 }
 
 // ignore: camel_case_types
-class _thirdRouteState extends State<thirdRoute> {
+class _shoppingDetailList extends State<ShoppingDetailList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +26,9 @@ class _thirdRouteState extends State<thirdRoute> {
           child: Column(
         children: [
           Hero(
-            tag: widget.pais,
+            tag: widget.billete,
             child: Image.network(
-              widget.pais.urlImagen,
+              widget.billete.urlImagen,
               fit: BoxFit.contain,
             ),
           ),
@@ -39,7 +38,7 @@ class _thirdRouteState extends State<thirdRoute> {
                 children: [
                   Flexible(
                     child: Text(
-                      widget.pais.descripcion,
+                      widget.billete.descripcion,
                       textAlign: TextAlign.justify,
                     ),
                   )
@@ -59,10 +58,10 @@ class _thirdRouteState extends State<thirdRoute> {
                               child: const Text('Cancelar')),
                           TextButton(
                               onPressed: (() {
-                                paises.remove(widget.pais);
+                                billetes.remove(widget.billete);
                                 Navigator.pop(context, 'Eliminar');
                                 Navigator.pushReplacementNamed(
-                                    context, Routes.secondRoute,
+                                    context, Routes.catalogo,
                                     arguments: email);
                               }),
                               child: const Text('Eliminar'))

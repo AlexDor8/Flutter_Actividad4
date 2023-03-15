@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/main.dart';
 import 'package:flutter_application_3/routing/app_routes.dart';
 import 'package:flutter_application_3/routing/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_local.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../globals.dart';
-import 'countryList.dart';
 
 String password = "";
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+  
+  @override
+  State<StatefulWidget> createState() => MainState();
+}
 
-  // This widget is the root of your application.
+class MainState extends State {
+late Locale _locale;
+Locale get locale => _locale;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +28,24 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Routes.splash,
       routes: appRoutes,
+      localizationsDelegates: const[
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('es'),
+        Locale('en_US'),
+        Locale('es_ES')
+      ],
     );
+  }
+  @override
+  void initState() {
+    super.initState();
+    _locale = Locale(defaultLocale, defaultLanguage);
   }
 }
 

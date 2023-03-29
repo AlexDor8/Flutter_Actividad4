@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/pages/detailList.dart';
-
+import 'package:flutter_gen/gen_l10n/app_local.dart';
 import '../globals.dart';
 import '../model/pais.dart';
 import '../routing/routes.dart';
@@ -23,6 +23,9 @@ class _secondRouteState extends State<secondRoute> {
 
   @override
   Widget build(BuildContext context) {
+
+    final text = AppLocalizations.of(context);
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Segunda pantalla'),
@@ -31,7 +34,7 @@ class _secondRouteState extends State<secondRoute> {
       body: Center(
         child: Column(
           children: [
-            Text("Nombre de usuario: ${widget.email}"),
+            Text("${text?.userName} ${widget.email}"),
             Flexible(
                 child: InkWell(
               child: ListView.builder(

@@ -1,4 +1,5 @@
 {
     "@@locale":"es",
-    "helloWorld" : "Hola mundo"
+    "helloWorld" : "Hola mundo",
+    "userName" : "Nombre de usuario:"
 }

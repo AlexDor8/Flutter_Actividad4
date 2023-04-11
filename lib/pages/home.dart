@@ -3,6 +3,8 @@ import 'package:flutter_application_3/globals.dart';
 
 import '../routing/routes.dart';
 
+import 'package:flutter_gen/gen_l10n/app_local.dart';
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -14,9 +16,10 @@ class Home extends StatefulWidget {
 class _home extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Segunda pantalla'),
+        title: Text("${text?.secondPage}"),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -26,13 +29,13 @@ class _home extends State<Home> {
             onPressed: () {
               Navigator.pushNamed(context, Routes.catalogo);
             },
-            child: const Text('Catalogo'),
+            child: Text("${text?.catalogue}"),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, Routes.secondRoute, arguments: email);
             },
-            child: const Text('Paises'),
+            child: Text("${text?.countries}"),
           ),
         ],
       )),

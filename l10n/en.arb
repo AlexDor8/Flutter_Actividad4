@@ -1,5 +1,31 @@
 {
     "@@locale":"en",
     "helloWorld": "Hello World",
-    "userName" : "Username:"
+    "userName" : "Username:",
+    "catalogue": "Catalogue",
+    "secondPage": "Second page",
+    "countries": "Countries",
+
+    "introduceTexto": "Enter text",
+    "usuarioIncorrecto": "The user is not correct",
+    "contrasenaCaracteres": "The password must have at least 7 characters",
+    "minNumLetra": "It must contain at least one number and one letter",
+    "contrasenaIncorrecta": "The password is not correct",
+    "olvidarContrasena": "Have you forgotten the password?",
+    "nuevoUsuario": "New user? Create an account",
+
+    "listaPais": "Country list",
+
+    "borrar": "Delete",
+    "eliminarPais": "Delete country",
+    "quieresEliminarPais": "Do you want to delete this country?",
+    "cancelar": "Cancel",
+    "eliminar": "Eliminate",
+
+    "listaBilletes": "Ticket list",
+    "precio": "Price",
+    "fecha": "Date",
+
+    "eliminarBillete": "Delete ticket",
+    "quieresEliminarBillete": "Do you want to delete this ticket?"
 }

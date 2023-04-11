@@ -28,7 +28,7 @@ class _secondRouteState extends State<secondRoute> {
     
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Segunda pantalla'),
+        title: Text("${text?.listaPais}"),
         automaticallyImplyLeading: false,
       ),
       body: Center(

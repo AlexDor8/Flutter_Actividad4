@@ -4,6 +4,9 @@ import 'package:flutter_application_3/model/billete.dart';
 
 import 'model/pais.dart';
 
+import 'package:flutter_gen/gen_l10n/app_local.dart';
+
+
 List<Pais> paises = [
   Pais(
       'https://www.maravillas-del-mundo.com/Cristo-redentor/images/Photos/Christ-redempteur-006.jpg',
@@ -100,3 +103,6 @@ List<Billete> billetes = [
       'Tokio, la ajetreada capital de Japón, mezcla lo ultramoderno y lo tradicional, desde los rascacielos iluminados con neones hasta los templos históricos. El opulento santuario Shinto Meiji es conocido por su puerta altísima y los bosques circundantes. El Palacio Imperial se ubica en medio de grandes jardines públicos.',
       'https://planetofhotels.com/guide/sites/default/files/styles/node__blog_post__bp_banner/public/live_banner/Tokyo.jpg')
 ];
+
+
+

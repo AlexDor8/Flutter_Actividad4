@@ -38,7 +38,8 @@ Locale get locale => _locale;
         Locale('en'),
         Locale('es'),
         Locale('en_US'),
-        Locale('es_ES')
+        Locale('es_ES'),
+        Locale('fr'),
       ],
     );
   }
@@ -63,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -94,10 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       validator: (value) {
                         email = value!;
                         if (value.isEmpty) {
-                          return "Introduce texto";
+                          return "${text?.introduceTexto}";
                         }
                         if (value != "user") {
-                          return "El usuario no es correcto";
+                          return "${text?.usuarioIncorrecto}";
                         }
                         return null;
                       },
@@ -115,25 +117,25 @@ class _MyHomePageState extends State<MyHomePage> {
                       validator: (value) {
                         RegExp regex = RegExp(r'^(?=.*[a-z])(?=.*?[0-9])');
                         if (value == null || value.isEmpty) {
-                          return "Introduce texto";
+                          return "${text?.introduceTexto}";
                         }
                         if (value.length < 7) {
-                          return "La contraseña tiene que tener al menos 7 caracteres";
+                          return "${text?.contrasenaCaracteres}";
                         }
                         if (!regex.hasMatch(value)) {
-                          return "Tiene que contener mínimo un numero y una letra";
+                          return "${text?.minNumLetra}";
                         }
                         if (value != "pass12345") {
-                          return "La contraseña no es correcta";
+                          return "${text?.contrasenaIncorrecta}";
                         }
                         return null;
                       }),
                 ),
                 Container(
                   margin: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: const Text(
-                    "Forgot password",
-                    style: TextStyle(color: Colors.blue),
+                  child: Text(
+                    "${text?.olvidarContrasena}",
+                    style: const TextStyle(color: Colors.blue),
                   ),
                 ),
                 ElevatedButton(
@@ -145,9 +147,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     }),
                 Container(
                   margin: const EdgeInsets.fromLTRB(0, 85, 0, 10),
-                  child: const Text(
-                    "New User? Create Account",
-                    style: TextStyle(color: Colors.black, fontSize: 12),
+                  child: Text(
+                    "${text?.nuevoUsuario}",
+                    style: const TextStyle(color: Colors.black, fontSize: 12),
                   ),
                 ),
               ],

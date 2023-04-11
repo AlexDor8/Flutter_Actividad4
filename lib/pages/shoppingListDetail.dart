@@ -49,8 +49,8 @@ class _shoppingDetailList extends State<ShoppingDetailList> {
               onPressed: () => showDialog(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
-                        title: const Text("Eliminar país"),
-                        content: const Text("¿Quieres eliminar este país?"),
+                        title: const Text("Eliminar billete"),
+                        content: const Text("¿Quieres eliminar este billete?"),
                         actions: [
                           TextButton(
                               onPressed: () =>

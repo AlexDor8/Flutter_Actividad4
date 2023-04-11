@@ -1,5 +1,37 @@
 {
     "@@locale":"es",
     "helloWorld" : "Hola mundo",
-    "userName" : "Nombre de usuario:"
+    "userName" : "Nombre de usuario:",
+    "catalogue": "Catalogo",
+    "secondPage": "Segunda pantalla",
+    "countries": "Paises",
+
+    "introduceTexto": "Introduce texto",
+    "usuarioIncorrecto": "El usuario no es correcto",
+    "contrasenaCaracteres": "La contraseña tiene que tener al menos 7 caracteres",
+    "minNumLetra": "Tiene que contener mínimo un numero y una letra",
+    "contrasenaIncorrecta": "La contraseña no es correcta",
+    "olvidarContrasena": "¿Has olvidado la contraseña?",
+    "nuevoUsuario": "¿Nuevo Usuario? Crear una cuenta",
+
+    "listaPais": "Lista país",
+
+    "borrar": "Borrar",
+    "eliminarPais": "Eliminar país",
+    "quieresEliminarPais": "¿Quieres eliminar este país?",
+    "cancelar": "Cancelar",
+    "eliminar": "Eliminar",
+
+    "listaBilletes": "Lista billetes",
+    "precio": "Precio",
+    "fecha": "Fecha",
+
+    "eliminarBillete": "Eliminar billete",
+    "quieresEliminarBillete": "¿Quieres eliminar este billete?"
+
+
+
+
+
+
 }

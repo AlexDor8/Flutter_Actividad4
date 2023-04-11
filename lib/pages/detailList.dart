@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../globals.dart';
 import '../model/pais.dart';
 import '../routing/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_local.dart';
 
 // ignore: camel_case_types
 class thirdRoute extends StatefulWidget {
@@ -19,6 +20,7 @@ class thirdRoute extends StatefulWidget {
 class _thirdRouteState extends State<thirdRoute> {
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -46,26 +48,26 @@ class _thirdRouteState extends State<thirdRoute> {
                 ],
               )),
           ElevatedButton(
-              child: const Text('Borrar'),
+              child: Text("${text?.borrar}"),
               onPressed: () => showDialog(
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
-                        title: const Text("Eliminar país"),
-                        content: const Text("¿Quieres eliminar este país?"),
+                        title: Text("${text?.eliminarPais}"),
+                        content: Text("${text?.quieresEliminarPais}"),
                         actions: [
                           TextButton(
                               onPressed: () =>
-                                  Navigator.pop(context, 'Cancelar'),
-                              child: const Text('Cancelar')),
+                                  Navigator.pop(context, "${text?.cancelar}"),
+                              child: Text("${text?.cancelar}")),
                           TextButton(
                               onPressed: (() {
                                 paises.remove(widget.pais);
-                                Navigator.pop(context, 'Eliminar');
+                                Navigator.pop(context, "${text?.cancelar}");
                                 Navigator.pushReplacementNamed(
                                     context, Routes.secondRoute,
                                     arguments: email);
                               }),
-                              child: const Text('Eliminar'))
+                              child: Text("${text?.eliminar}"))
                         ],
                       ))),
         ],

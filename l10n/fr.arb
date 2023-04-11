@@ -1,5 +1,31 @@
 {
     "@@locale":"fr",
     "helloWorld":"Hola mundo",
-    "userName" : "Nombre de usuario:"
+    "userName" : "Nom d'utilisateur:",
+    "catalogue": "Catalogue",
+    "secondPage": "Deuxième écran",
+    "countries": "Les pays",
+
+    "introduceTexto": "Entrez du texte",
+    "usuarioIncorrecto": "L'utilisateur n'est pas correct",
+    "contrasenaCaracteres": "Le mot de passe doit comporter au moins 7 caractères",
+    "minNumLetra": "Il doit contenir au moins un chiffre et une lettre",
+    "contrasenaIncorrecta": "Le mot de passe n'est pas correct",
+    "olvidarContrasena": "Avez-vous oublié le mot de passe?",
+    "nuevoUsuario": "Nouvel utilisateur? Créer un compte",
+
+    "listaPais": "Liste des pays",
+
+    "borrar": "Supprimer",
+    "eliminarPais": "Supprimer le pays",
+    "quieresEliminarPais": "Voulez-vous supprimer ce pays?",
+    "cancelar": "Annuler",
+    "eliminar": "Éliminer",
+
+    "listaBilletes": "Liste des billets",
+    "precio": "Prix",
+    "fecha": "Date",
+
+    "eliminarBillete": "Supprimer le ticket",
+    "quieresEliminarBillete": "Voulez-vous supprimer ce ticket?"
 }

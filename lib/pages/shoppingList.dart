@@ -3,6 +3,7 @@ import 'package:flutter_application_3/globals.dart';
 import 'package:intl/intl.dart';
 
 import '../routing/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_local.dart';
 
 // ignore: camel_case_types
 class shoppingList extends StatefulWidget {
@@ -16,9 +17,10 @@ class shoppingList extends StatefulWidget {
 class _shoppingListSate extends State<shoppingList> {
   @override
   Widget build(BuildContext context) {
+    final text = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista billetes'),
+        title: Text("${text?.listaBilletes}"),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -45,9 +47,9 @@ class _shoppingListSate extends State<shoppingList> {
                           children: [
                             Text(billetes[index].nombre),
                             Text(
-                                'Precio: ${NumberFormat.currency(symbol: '€').format(billetes[index].precio)}'),
+                                '${text?.precio}: ${NumberFormat.currency().format(billetes[index].precio)}'),
                             Text(
-                                'Fecha: ${DateFormat('dd-MM-yyyy').format(billetes[index].fechaAlta)}')
+                                '${text?.fecha}: ${DateFormat('dd-MM-yyyy').format(billetes[index].fechaAlta)}')
                           ],
                         )
                       ],

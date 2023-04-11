@@ -22,12 +22,12 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     },
     Routes.thirdRoute:(context) {
       final pais = ModalRoute.of(context)!.settings.arguments as Pais;
-      return thirdRoute(title: "Tercera pantalla", pais: pais);
+      return thirdRoute(title: "Third page", pais: pais);
     },
     Routes.catalogo: (context) => const shoppingList(),
     Routes.catalogoDetalle:(context) {
       final billete = ModalRoute.of(context)!.settings.arguments as Billete;
-      return ShoppingDetailList(title: "Detalle catalogo", billete: billete);
+      return ShoppingDetailList(title: "Catalogue detail", billete: billete);
     },
   };
 }

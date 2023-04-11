@@ -4,7 +4,6 @@ import 'package:flutter_application_3/model/billete.dart';
 
 import 'model/pais.dart';
 
-import 'package:flutter_gen/gen_l10n/app_local.dart';
 
 
 List<Pais> paises = [
